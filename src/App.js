@@ -1,15 +1,37 @@
 import React from 'react';
 import {Button, Input} from 'semantic-ui-react'
 
-function Login(){
+function Login2(){
 
 return(
   <div>
   <Input/>
-  <Button Primary> 로그인! </Button>
+  <Button onClick = {(e)=> {
+console.log(e)
+    alert(e.target.value)
+  } }> 로그인! </Button>
   </div>
 
-)
+  )
+}
+
+class Login extends React.Component{
+constructor(){
+  super()
+  this.state = {id:"아무것도 입력을 안했구만"}
+}
+
+  render(){
+    return(
+      <div>
+      <Input onchange = { (e) => this.setstate({id : e.target.value }) }/>
+      <Button value = {this.state.id} onClick = {(event)=> {
+    console.log(event)
+        alert(event.target.value)
+      } } > Login </Button>
+      </div>
+    )
+  }
 }
 
 
