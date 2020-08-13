@@ -1,7 +1,7 @@
 import React from 'react';
-import {Image, Comment, Form, Button, Header} from 'semantic-ui-react'
+import {Comment, Form, Button, Header} from 'semantic-ui-react'
 
-import ham from"./ham.jpg"
+
 import human from"./human.png"
 
 class Comments extends React.Component {
@@ -35,15 +35,4 @@ class Comments extends React.Component {
     </Comment.Group>)
   }
 }
-
-function App() {
-  return (
-    <div>
-    <Image src = {ham} centered />
-    <Comments />
-
-    </div>
-  );
-}
-
-export default App;
+export default Comments
