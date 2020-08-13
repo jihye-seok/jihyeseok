@@ -6,7 +6,7 @@ function Login(){
 return(
   <div>
   <Input/>
-  <Button> 로그인 </Button>
+  <Button Primary> 로그인! </Button>
   </div>
 
 )
