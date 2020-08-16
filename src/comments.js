@@ -18,7 +18,7 @@ constructor(){
       <Comment.Group style={{ marginLeft: "600px" }}>
         <Header as="h3" dividing>
           Comments
-        </Header>
+        </Header>a
 
         <Comment>
           <Comment.Avatar src={human} />
