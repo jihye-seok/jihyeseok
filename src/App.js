@@ -17,19 +17,19 @@ function App() {
       color='red'
       content='Like'
       icon='heart'
-      label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
+      label={{ basic: true, color: 'red', pointing: 'left', content: '0' }}
     />
     <Button
       basic
       color='blue'
-      content='Fork'
+      content='Share'
       icon='fork'
       label={{
         as: 'a',
         basic: true,
         color: 'blue',
         pointing: 'left',
-        content: '2,048',
+        content: '0',
       }}
     />
     </Grid.Row>
