@@ -1,46 +1,58 @@
 import React from 'react';
-import {Image, Comment, Form, Button, Header} from 'semantic-ui-react'
+import {Button, Image, Divider, Header, Icon, Grid} from 'semantic-ui-react'
+
+import Comments from './comments.js'
 
 import ham from"./ham.jpg"
-import human from"./human.png"
-
-class Comments extends React.Component {
-
-  render(){
-    return(<Comment.Group>
-      <Header as='h3' dividing>
-        Comments
-      </Header>
-
-      <Comment>
-        <Comment.Avatar src={human} />
-        <Comment.Content>
-          <Comment.Author as='a'>Matt</Comment.Author>
-          <Comment.Metadata>
-            <div>Today at 5:42PM</div>
-          </Comment.Metadata>
-          <Comment.Text>How artistic!</Comment.Text>
-          <Comment.Actions>
-            <Comment.Action>Reply</Comment.Action>
-          </Comment.Actions>
-        </Comment.Content>
-      </Comment>
-
-
-
-      <Form reply>
-        <Form.TextArea />
-        <Button content='Add Reply' labelPosition='left' icon='edit' primary />
-      </Form>
-    </Comment.Group>)
-  }
-}
 
 function App() {
   return (
     <div>
-    <Image src = {ham} centered />
+    <Grid centered>
+    <Grid.Row>
+      <Image src = {ham} centered />
+</Grid.Row>
+<Grid.Row>
+    <Button
+      color='red'
+      content='Like'
+      icon='heart'
+      label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
+    />
+    <Button
+      basic
+      color='blue'
+      content='Fork'
+      icon='fork'
+      label={{
+        as: 'a',
+        basic: true,
+        color: 'blue',
+        pointing: 'left',
+        content: '2,048',
+      }}
+    />
+    </Grid.Row>
+  </Grid>
+  <br/>
+    <Divider horizontal>
+  <Header as='h4'>
+    <Icon name='envelope outline' />
+    Contact me
+  </Header>
+</Divider>
+<br/>
     <Comments />
+
+    <div>
+    <Grid centered>
+<Button circular color='facebook' icon='facebook' />
+<Button circular color='twitter' icon='twitter' />
+<Button circular color='youtuve' icon='youtuve' />
+<Button circular color='google plus' icon='google plus' />
+</Grid>
+</div>
+
 
     </div>
   );
