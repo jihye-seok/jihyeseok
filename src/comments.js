@@ -18,7 +18,7 @@ constructor(){
       <Comment.Group style={{ marginLeft: "600px" }}>
         <Header as="h3" dividing>
           Comments
-        </Header>a
+        </Header>
 
         <Comment>
           <Comment.Avatar src={human} />
@@ -32,7 +32,8 @@ constructor(){
         </Comment>
 
         <Form reply>
-          <Form.TextArea value = {this.state.inputContent}>
+          <Form.TextArea
+           value = {this.state.inputContent}/>
           <Button
             content="Add Reply"
             labelPosition="left"
