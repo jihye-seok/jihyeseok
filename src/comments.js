@@ -1,45 +1,58 @@
 import React from "react";
 import { Comment, Form, Button, Header, Icon } from "semantic-ui-react";
 
-
 import human from "./human.png";
+
+function SingleComment (deatail) {
+  return (  <Comment>
+      <Comment.Content>
+      <Comment.Avatar src={human} />
+
+        <Comment.Author as="a">Matt</Comment.Author>
+        <Comment.Metadata>
+          <div>Today at 5:42PM</div>
+        </Comment.Metadata>
+        <Comment.Text>{detail.content}</Comment.Text>
+      </Comment.Content>
+    </Comment>)
+}
 
 class Comments extends React.Component {
 constructor(){
-  super()
+  super();
   this.state = {
-    inputContent : ""
-  }
+    inputContent : "",
+    commentsList : [],
+  };
 }
 
-
   render() {
+    console.log(this.state.commentsList)
     return (
       <Comment.Group style={{ marginLeft: "600px" }}>
         <Header as="h3" dividing>
           Comments
         </Header>
 
-        <Comment>
-          <Comment.Avatar src={human} />
-          <Comment.Content>
-            <Comment.Author as="a">Matt</Comment.Author>
-            <Comment.Metadata>
-              <div>Today at 5:42PM</div>
-            </Comment.Metadata>
-            <Comment.Text>How artistic!</Comment.Text>
-          </Comment.Content>
-        </Comment>
+{this.state.commentsList.map(comments => <SingleComment content = {comments}/>)}
+
 
         <Form reply>
           <Form.TextArea
-           value = {this.state.inputContent} placeholder = "댓글을 입력해주세요ㅎㅎ" onchange = {(e)=>this.setstate({inputContent : e.target.value})>
+           value = {this.state.inputContent}
+           placeholder = "댓글을 입력해주세요 ㅎㅎ"
+           onChange={(e)=>this.setState({ inputContent : e.target.value})}
+           />
           <Button
             content="Add Reply"
             labelPosition="left"
             icon="edit"
-            primary />
-          </Form.TextArea>
+            primary
+            onClick = {() => this.setState ((prevState)=> {return{
+              commentsList : [...prevState.commentsList, this.state.inputContent]}})}
+
+            />
+
         </Form>
         <br />
       </Comment.Group>
