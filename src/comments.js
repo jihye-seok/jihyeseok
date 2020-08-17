@@ -8,7 +8,7 @@ class Comments extends React.Component {
 constructor(){
   super()
   this.state = {
-    inputContent : "댓글을 입력해주세요!"
+    inputContent : ""
   }
 }
 
@@ -33,7 +33,7 @@ constructor(){
 
         <Form reply>
           <Form.TextArea
-           value = {this.state.inputContent}/>
+           value = {this.state.inputContent} placeholder = "댓글을 입력해주세요ㅎㅎ" onchange = {(e)=>this.setstate({inputContent : e.target.value})>
           <Button
             content="Add Reply"
             labelPosition="left"
