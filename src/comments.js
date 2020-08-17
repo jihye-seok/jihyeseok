@@ -3,7 +3,7 @@ import { Comment, Form, Button, Header, Icon } from "semantic-ui-react";
 
 import human from "./human.png";
 
-function SingleComment (deatail) {
+function SingleComment (detail) {
   return (  <Comment>
       <Comment.Content>
       <Comment.Avatar src={human} />
