@@ -4,15 +4,16 @@ import { Comment, Form, Button, Header, Icon } from "semantic-ui-react";
 import human from "./human.png";
 
 function SingleComment (detail) {
-  return (  <Comment>
+  return (
+     <Comment >
       <Comment.Content>
       <Comment.Avatar src={human} />
 
-        <Comment.Author as="a">Matt</Comment.Author>
-        <Comment.Metadata>
-          <div>Today at 5:42PM</div>
+        <Comment.Author as="a" style = {{color : "white", marginLeft : "5px"}}> 방문자 </Comment.Author>
+        <Comment.Metadata >
+          <div style = {{color : "white"}}>2020년</div>
         </Comment.Metadata>
-        <Comment.Text>{detail.content}</Comment.Text>
+        <Comment.Text style = {{color : "white", marginLeft : "40px"}}>{detail.content}</Comment.Text>
       </Comment.Content>
     </Comment>)
 }
@@ -22,7 +23,7 @@ constructor(){
   super();
   this.state = {
     inputContent : "",
-    commentsList : [],
+    commentsList : []
   };
 }
 
@@ -30,7 +31,7 @@ constructor(){
     console.log(this.state.commentsList)
     return (
       <Comment.Group style={{ marginLeft: "600px" }}>
-        <Header as="h3" dividing>
+        <Header as="h3" dividing style = {{color : "white"}}>
           Comments
         </Header>
 
@@ -49,7 +50,9 @@ constructor(){
             icon="edit"
             primary
             onClick = {() => this.setState ((prevState)=> {return{
-              commentsList : [...prevState.commentsList, this.state.inputContent]}})}
+              commentsList : [...prevState.commentsList, this.state.inputContent],
+          inputContent: ""
+          }})}
 
             />
 
