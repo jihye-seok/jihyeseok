@@ -24,10 +24,10 @@ constructor(){
               })}
               />
               <Button
-              
+
                 color="blue"
-                content="Share"
-                icon="fork"
+                content="visitors"
+                icon="globe"
                 label={{
                   as: "a",
                   basic: true,

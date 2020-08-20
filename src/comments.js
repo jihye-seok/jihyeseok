@@ -9,7 +9,7 @@ function SingleComment (detail) {
       <Comment.Content>
       <Comment.Avatar src={human} />
 
-        <Comment.Author as="a" style = {{color : "white", marginLeft : "5px"}}> 방문자 </Comment.Author>
+        <Comment.Author as="a" style = {{color : "white", marginLeft : "5px"}}> {detail.info.userName} </Comment.Author>
         <Comment.Metadata >
           <div style = {{color : "white"}}>2020년</div>
         </Comment.Metadata>
@@ -23,14 +23,16 @@ constructor(){
   super();
   this.state = {
     inputContent : "",
+      userName : "",
     commentsList : []
+
   };
 }
 
   render() {
     console.log(this.state.commentsList)
     return (
-      <Comment.Group style={{ marginLeft: "600px" }}>
+      <Comment.Group >
         <Header as="h3" dividing style = {{color : "white"}}>
           Comments
         </Header>
@@ -50,7 +52,7 @@ constructor(){
             icon="edit"
             primary
             onClick = {() => this.setState ((prevState)=> {return{
-              commentsList : [...prevState.commentsList, this.state.inputContent],
+              commentsList : [...prevState.commentsList, {content : this.state.inputContent, userName : this.props.userName}],
           inputContent: ""
           }})}
 
